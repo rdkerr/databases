@@ -7,6 +7,7 @@ var RoomsView = {
 
     RoomsView.$select.on('change', RoomsView.handleChange);
     RoomsView.$button.on('click', RoomsView.handleClick);
+    Rooms.add(Rooms.default);
   },
 
   render: function() {

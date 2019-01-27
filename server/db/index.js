@@ -10,9 +10,4 @@ var con = mysql.createConnection({
   database: 'chat'
 });
 
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
-
 module.exports = con;
