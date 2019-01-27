@@ -7,11 +7,10 @@ var MessagesView = {
     MessagesView.$chats.on('click', '.username', MessagesView.handleClick);
   },
 
-  render: function() {
+  render: function(messages) {
 
     MessagesView.$chats.html('');
-    Messages
-      .items()
+    messages
       .filter(message => message.username)
       .filter(message => message.text)
       .filter(message => Rooms.isSelected(message.roomname))

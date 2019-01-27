@@ -15,7 +15,7 @@ module.exports = {
       console.log('MODEL/MESSAGES/GET\n');
       connect();
       db.connect();
-      var sql = 'SELECT * FROM messages ORDER BY created_at DESC';
+      var sql = 'SELECT m.message, m.created_at, m.id, u.name as username, r.name as roomname FROM messages AS m INNER JOIN users AS u ON u.id=m.user_id INNER JOIN rooms as r ON r.id=m.room_id ORDER BY created_at DESC';
       db.query(sql, function (err, result) {
         if (err) {
           throw err;
